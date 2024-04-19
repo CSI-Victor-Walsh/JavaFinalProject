@@ -1,6 +1,8 @@
 /*  CSI Checkers 2024
 * Below you will find a template for creating your Checkers game.
-*werreererre
+
+Hello, this is a test from the test branch
+
 * TO-DO comments:
 * Notice the "TO-DO" (without the '-') code comments, so that you may keep track of the code that is left to
 * be written. To see the list of TO-DO comments, go to View -> Tool Windows -> TO-DO.
