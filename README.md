@@ -1,0 +1,2 @@
+# JavaFinalProject
+For checkers game
