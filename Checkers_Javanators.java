@@ -26,7 +26,7 @@
 
 import java.util.Scanner;
 
-public class Checkers_TeamName {
+public class Checkers_Javanators {
 
     static final char EMPTY = '-';
     static final char RED = 'R';
