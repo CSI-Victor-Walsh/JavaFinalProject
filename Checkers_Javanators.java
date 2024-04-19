@@ -111,7 +111,7 @@ public class Checkers_Javanators {
 
     
     public static void main(String[] args) {
-
+System.out.println("Hello World")
         //TODO: ADJUST TEMPLATE CODE HERE
 
         System.out.println("------------CHECKERS----------");
