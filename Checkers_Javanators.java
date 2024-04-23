@@ -1,6 +1,7 @@
 /*  CSI Checkers 2024
 * Below you will find a template for creating your Checkers game.
 
+
 * TO-DO comments:
 * Notice the "TO-DO" (without the '-') code comments, so that you may keep track of the code that is left to
 * be written. To see the list of TO-DO comments, go to View -> Tool Windows -> TO-DO.
@@ -109,12 +110,15 @@ public class Checkers_Javanators {
         }
     }
 
-    
     public static void main(String[] args) {
-System.out.println("Hello World")
+        System.out.println("\nHello, this is a test from the test branch\n");
+        System.out.println("This is another test");
+
+
+
         //TODO: ADJUST TEMPLATE CODE HERE
 
-        System.out.println("------------CHECKERS----------");
+        System.out.println("------------CHECKERS test----------");
 
         //Initial set up
 
