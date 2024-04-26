@@ -441,8 +441,6 @@ while (userMode == 2) {
             println("Your opponent is: "+aiName);
             break;
         }
-        break;
-
         
     println("Your opponent is: "+aiName);
     try {
@@ -452,15 +450,17 @@ while (userMode == 2) {
         e.printStackTrace();
     }
     clearScreen();
-
+}
     if (userMode > 2) {
         println(RED+"Invalid number, please try again\n"+RESET);
     }
-     while (userMode != 0) {
+    while (userMode != 0) {
     println("\nGOODBYE!");
-     
     }
-
+ 
+    } 
+    } while (userMode != 0);
+    }
      
 
     //Start the game with the animation
@@ -500,3 +500,4 @@ while (userMode == 2) {
         System.out.flush();
     }
 }
+
