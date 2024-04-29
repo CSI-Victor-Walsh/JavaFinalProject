@@ -52,12 +52,41 @@ public class Checkers_Javanators {
     }
 
     public static boolean isValidMove(int row1, int col1, int row2, int col2) {
-        //TODO: YOUR CODE HERE
+        //return false if the numbers entered are invalid
+        if ((row1 < 0) || (row1 > 7) || (col1 < 0) || (row2 < 0) || (col2 < 0) || (col1 > 7) || (row2 > 7) || (col2 > 7)) {
+            return false;
+        }
+        
+        //Make sure there is a piece in the space the user wants to move 
+        if (board[row1][col1] == EMPTY ) {
+            println("Space is empty, please try again");
+            return false;
+        }
+
+        if ((isRedTurn) == true && board[row1][col1] == cBLACK) {
+            println("Space is taken by another piece, please try again");
+            return false;
+        }
+
+        if ((isRedTurn) == false && board[row1][col1] == cRED) {
+            println("Space is taken by another piece, please try again");
+            return false;
+        }
+
+        //If its red's turn and the piece to be moved is red, accept the move
+        if ((isRedTurn) == true && board[row1][col1] == cRED) {
+            return true;
+        }
+
+        if ((isRedTurn) == false && board[row1][col1] == cBLACK) {
+            return true;
+        }
+
         return true;
     }
 
     public static void makeMove(int row1, int col1, int row2, int col2) {
-        //TODO: YOUR CODE HERE
+        //Find the piece the user entered
     }
 
     public static void playGame(){
@@ -82,12 +111,10 @@ public class Checkers_Javanators {
             int row2 = scanner.nextInt();
             int col2 = scanner.nextInt();
 
-            if (isValidMove(row1, col1, row2, col2)) {
-
+            if (isValidMove(row1, col1, row2, col2) == true) {
                 makeMove(row1, col1, row2, col2);
-                
-
-            } else {
+            } 
+            else {
                 System.out.println("Invalid move, try again.");
             }
         }
