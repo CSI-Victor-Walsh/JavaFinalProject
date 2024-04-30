@@ -50,30 +50,29 @@ public class Checkers_Javanators {
             System.out.println();
         }
     }
-
-    public static boolean isValidMove(int row1, int col1, int row2, int col2) {
+    public static boolean checkFirstInput(int row1, int col1) {
         //return false if the numbers entered are invalid
-        if ((row1 < 0) || (row1 > 7) || (col1 < 0) || (row2 < 0) || (col2 < 0) || (col1 > 7) || (row2 > 7) || (col2 > 7)) {
+        if ((row1 < 0) || (row1 > 7) || (col1 < 0)) {
+            println(RED+"Number is not a space on the board, please try again"+RESET);
             return false;
         }
-        
+
         //Make sure there is a piece in the space the user wants to move 
         if (board[row1][col1] == EMPTY ) {
-            println("Space is empty, please try again");
+            println(RED+"Space is empty, please try again"+RESET);
             return false;
         }
-
         if ((isRedTurn) == true && board[row1][col1] == cBLACK) {
-            println("Space is taken by another piece, please try again");
+            println(RED+"Space is taken by opposite player's piece, please try again"+RESET);
             return false;
         }
 
         if ((isRedTurn) == false && board[row1][col1] == cRED) {
-            println("Space is taken by another piece, please try again");
+            println(RED+"Space is taken by opposite player's piece, please try again"+RESET);
             return false;
         }
 
-        //If its red's turn and the piece to be moved is red, accept the move
+        //If it's red's turn and the piece to be moved is red, accept the move
         if ((isRedTurn) == true && board[row1][col1] == cRED) {
             return true;
         }
@@ -81,8 +80,25 @@ public class Checkers_Javanators {
         if ((isRedTurn) == false && board[row1][col1] == cBLACK) {
             return true;
         }
+    
+        return true;
+        }   
+
+    public static boolean checkSecondInput(int row2, int col2) {
+        //return false if the numbers entered are invalid
+        if ((row2 < 0) || (col2 < 0) || (row2 > 7) || (col2 > 7)) {
+            println(RED+"Number is not a space on the board, please try again"+RESET);
+            return false;
+        }
 
         return true;
+        }   
+
+    public static boolean isValidMove(int row1, int col1, int row2, int col2) {
+        if (checkFirstInput(row1, col1) && checkSecondInput(row2, col2)) {
+            return true;
+        }
+        return false;
     }
 
     public static void makeMove(int row1, int col1, int row2, int col2) {
@@ -90,32 +106,74 @@ public class Checkers_Javanators {
     }
 
     public static void playGame(){
-
-        //TODO: MODIFY TEMPLATE CODE
-
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
+        while (isRedTurn = true) {
 
             printBoard();
 
             if (isRedTurn) {
-                System.out.println("Red's turn");
+                println("\nRed's turn");
             } else {
-                System.out.println("Black's turn");
+                println("Black's turn");
             }
 
-            System.out.print("Enter move (row1 col1 row2 col2): ");
+            //Ask for user input
+            print("\nEnter move: \n");
+
+            println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+            print(YELLOW+"X-Input: "+RESET);
             int row1 = scanner.nextInt();
+            print(YELLOW+"\nY-Input: "+RESET);
             int col1 = scanner.nextInt();
+
+            println(YELLOW+"\nTo where?"+RESET);
+            print(YELLOW+"X-Input: "+RESET);
             int row2 = scanner.nextInt();
+            print(YELLOW+"\nY-Input: "+RESET);
             int col2 = scanner.nextInt();
 
             if (isValidMove(row1, col1, row2, col2) == true) {
                 makeMove(row1, col1, row2, col2);
+                isRedTurn = false;
             } 
             else {
-                System.out.println("Invalid move, try again.");
+                System.out.println(" ");
+            }
+        }
+
+        while (isRedTurn = false) {
+
+             printBoard();
+
+            if (isRedTurn) {
+                println("\nRed's turn");
+            } else {
+                println("Black's turn");
+            }
+
+            //Ask for user input
+            print("\nEnter move: \n");
+
+            println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+            print(YELLOW+"X-Input: "+RESET);
+            int row1 = scanner.nextInt();
+            print(YELLOW+"\nY-Input: "+RESET);
+            int col1 = scanner.nextInt();
+
+            println(YELLOW+"\nTo where?"+RESET);
+            print(YELLOW+"X-Input: "+RESET);
+            int row2 = scanner.nextInt();
+            print(YELLOW+"\nY-Input: "+RESET);
+            int col2 = scanner.nextInt();
+
+            if (isValidMove(row1, col1, row2, col2) == true) {
+                makeMove(row1, col1, row2, col2);
+                isRedTurn = true;
+                break;
+            } 
+            else {
+                System.out.println(" ");
             }
         }
     }
