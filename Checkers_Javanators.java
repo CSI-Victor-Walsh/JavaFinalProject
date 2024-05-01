@@ -20,8 +20,8 @@
 //TODO: ^^^ Remove the comments above ^^^
 
 
-//TODO << YOUR TEAM NAME HERE >>
-    //TODO << YOUR TEAM MEMBERS HERE >>
+//     Javanators
+    // << Team Leader: Victor Walsh, UI Design: Javier Ramis, Game Logic: Juan Pablo Jimenez Blanco  >>
 
 
 import java.util.Scanner;
@@ -165,7 +165,7 @@ public class Checkers_Javanators {
         
         //Human Opponent
         if (userMode == 1) {
-            println("\n\nWelcome to Trick-Trap-Throw! \nPlease enter your name");
+            println("\n\nWelcome to Castle Siege! \nPlease enter your name");
             // Prompt the user to enter their name
             print("Player 1: ");
             Scanner scanner = new Scanner(System.in);
@@ -329,16 +329,63 @@ public class Checkers_Javanators {
             }
     
             println("\n"+name2+"'s character is "+p2);
-    
+    //Start the game with the animation
             try {
                 Thread.sleep(1000);
+                print("    ██▓    ███▄    █     ██▒   █▓    ▄▄▄           ██████     ██▓    ▒█████      ███▄    █    ");
+                Thread.sleep(1000);
+                print("   ▓██▒    ██ ▀█   █    ▓██░   █▒   ▒████▄       ▒██    ▒    ▓██▒   ▒██▒  ██▒    ██ ▀█   █           ");
+                Thread.sleep(1000);
+                print("   ▒██▒   ▓██  ▀█ ██▒    ▓██  █▒░   ▒██  ▀█▄     ░ ▓██▄      ▒██▒   ▒██░  ██▒   ▓██  ▀█ ██▒          ");
+                Thread.sleep(1000);
+                print("   ░██░   ▓██▒  ▐▌██▒     ▒██ █░░   ░██▄▄▄▄██      ▒   ██▒   ░██░   ▒██   ██░   ▓██▒  ▐▌██▒          ");
+                Thread.sleep(1000);
+                print("   ░██░   ▒██░   ▓██░      ▒▀█░      ▓█   ▓██▒   ▒██████▒▒   ░██░   ░ ████▓▒░   ▒██░   ▓██░          ");
+                Thread.sleep(1000);
+                print("   ░▓     ░ ▒░   ▒ ▒       ░ ▐░      ▒▒   ▓▒█░   ▒ ▒▓▒ ▒ ░   ░▓     ░ ▒░▒░▒░    ░ ▒░   ▒ ▒           ");
+                Thread.sleep(1000);
+                print("    ▒ ░   ░ ░░   ░ ▒░      ░ ░░       ▒   ▒▒ ░   ░ ░▒  ░ ░    ▒ ░     ░ ▒ ▒░    ░ ░░   ░ ▒░          ");
+                Thread.sleep(1000);
+                print("    ▒ ░      ░   ░ ░         ░░       ░   ▒      ░  ░  ░      ▒ ░   ░ ░ ░ ▒        ░   ░ ░           ");
+                Thread.sleep(1000);
+                print("    ░              ░          ░           ░  ░         ░      ░         ░ ░              ░           ");
+                Thread.sleep(1000);
+                
             }
             catch (InterruptedException e) {
                 e.printStackTrace();
             }
             clearScreen();
 
-        System.out.println("------------CHECKERS----------");
+           
+            try {
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                      ▄▄▄▄      ▓█████      ▄████     ██▓    ███▄    █  ▐██▌                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ▓█████▄    ▓█   ▀     ██▒ ▀█▒   ▓██▒    ██ ▀█   █  ▐██▌                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ▒██▒ ▄██   ▒███      ▒██░▄▄▄░   ▒██▒   ▓██  ▀█ ██▒ ▐██▌                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ▒██░█▀     ▒▓█  ▄    ░▓█  ██▓   ░██░   ▓██▒  ▐▌██▒ ▓██▒                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ░▓█  ▀█▓   ░▒████▒   ░▒▓███▀▒   ░██░   ▒██░   ▓██░ ▒▄▄                          ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ░▒▓███▀▒   ░░ ▒░ ░    ░▒   ▒    ░▓     ░ ▒░   ▒ ▒  ░▀▀▒                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ▒░▒   ░     ░ ░  ░     ░   ░     ▒ ░   ░ ░░   ░ ▒░ ░  ░                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                      ░    ░       ░      ░ ░   ░     ▒ ░      ░   ░ ░     ░                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                      ░            ░  ░         ░     ░              ░  ░                            ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                           ░                                                                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                clearScreen();
+
 
         //Initial set up
 
