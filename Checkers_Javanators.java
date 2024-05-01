@@ -10,6 +10,9 @@
 * The DEBUGGER is a powerful tool for troubleshooting your code, especially for logical errors. ]
 *    Use it while you can!
 *
+
+//hello
+
 * Make sure to personalize this Checkers game app.
 *
 * Happy coding!!!
