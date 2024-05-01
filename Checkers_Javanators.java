@@ -123,22 +123,28 @@ public class Checkers_Javanators {
         clearScreen();
         try {
             Thread.sleep(300); //pause this Java app for 300ms
-            println(" ___   _____    _      _         _____                   _____ _                          ___ ");
+            print("\n" +
+                    "  ▄████▄      ▄▄▄           ██████    ▄▄▄█████▓    ██▓       ▓█████         ██████     ██▓   ▓█████      ▄████    ▓█████  \n");
             Thread.sleep(300); //pause this Java app for 300ms
-            println("|  _| |_   _|  (_)    | |       |_   _|                 |_   _| |                        |_  |");
+            print("▒██▀ ▀█     ▒████▄       ▒██    ▒    ▓  ██▒ ▓▒   ▓██▒       ▓█   ▀       ▒██    ▒    ▓██▒   ▓█   ▀     ██▒ ▀█▒   ▓█   ▀  \n");
             Thread.sleep(300); //pause this Java app for 300ms
-            println("| |     | |_ __ _  ___| | ________| |_ __ __ _ _ __ ______| | | |__  _ __ _____      __    | |");
+            print("▒▓█    ▄    ▒██  ▀█▄     ░ ▓██▄      ▒ ▓██░ ▒░   ▒██░       ▒███         ░ ▓██▄      ▒██▒   ▒███      ▒██░▄▄▄░   ▒███      \n");
             Thread.sleep(300); //pause this Java app for 300ms
-            println("| |     | | '__| |/ __| |/ /______| | '__/ _` | '_ \\______| | | '_ \\| '__/ _ \\ \\ /\\ / /    | |");
+            print("▒▓▓▄ ▄██▒   ░██▄▄▄▄██      ▒   ██▒   ░ ▓██▓ ░    ▒██░       ▒▓█  ▄         ▒   ██▒   ░██░   ▒▓█  ▄    ░▓█  ██▓   ▒▓█  ▄    \n");
             Thread.sleep(300); //pause this Java app for 300ms
-            println("| |     | | |  | | (__|   <       | | | | (_| | |_) |     | | | | | | | | (_) \\ V  V /     | |");
+            print("▒ ▓███▀ ░    ▓█   ▓██▒   ▒██████▒▒     ▒██▒ ░    ░██████▒   ░▒████▒      ▒██████▒▒   ░██░   ░▒████▒   ░▒▓███▀▒   ░▒████▒ \n");
             Thread.sleep(300); //pause this Java app for 300ms
-            println("| |_    \\_/_|  |_|\\___|_|\\_\\      \\_/_|  \\__,_| .__/      \\_/ |_| |_|_|  \\___/ \\_/\\_/     _| |");
+            print("░ ░▒ ▒  ░    ▒▒   ▓▒█░   ▒ ▒▓▒ ▒ ░     ▒ ░░      ░ ▒░▓  ░   ░░ ▒░ ░      ▒ ▒▓▒ ▒ ░   ░▓     ░░ ▒░ ░    ░▒   ▒    ░░ ▒░ ░\n");
             Thread.sleep(300); //pause this Java app for 300ms
-            println("|___|                                         | |                                        |___|");
+            print("  ░  ▒        ▒   ▒▒ ░   ░ ░▒  ░ ░       ░       ░ ░ ▒  ░    ░ ░  ░      ░ ░▒  ░ ░    ▒ ░    ░ ░  ░     ░   ░     ░ ░  ░\n");
             Thread.sleep(300); //pause this Java app for 300ms
-            println("                                              |_|                                       ");
+            print("░             ░   ▒      ░  ░  ░       ░           ░ ░         ░         ░  ░  ░      ▒ ░      ░      ░ ░   ░       ░   \n");
             Thread.sleep(300); //pause this Java app for 300ms
+            print("░ ░               ░  ░         ░                     ░  ░      ░  ░            ░      ░        ░  ░         ░       ░  ░\n");
+            Thread.sleep(300); //pause this Java app for 300ms
+            print("░ ░            ░  ░      ░               ░  ░   ░  ░         ░   ░     ░  ░      ░    ░  ░\n");
+            Thread.sleep(300); //pause this Java app for 300ms
+            print("░                                                                                         \n");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
