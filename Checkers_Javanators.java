@@ -1,6 +1,6 @@
 // Castle Siege
 // Java 2024
-//Game Logic Branch
+// Game Logic Branch
 
 // Javanators
 // By: Juan Pablo Jiménez, Víctor Walsh, Javier Ramis
@@ -127,24 +127,35 @@ public class Checkers_Javanators {
             print(YELLOW+"\nY-Input: "+RESET);
             int col1 = scanner.nextInt();
 
+            if (checkFirstInput(row1, col1) == false) {
+                //highlight the piece
+                while (checkFirstInput(row1, col1) == false) {
+                    println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                    print(YELLOW+"X-Input: "+RESET);
+                    row1 = scanner.nextInt();
+                    print(YELLOW+"\nY-Input: "+RESET);
+                    col1 = scanner.nextInt();
+                }
+            }
+        
             println(YELLOW+"\nTo where?"+RESET);
             print(YELLOW+"X-Input: "+RESET);
             int row2 = scanner.nextInt();
             print(YELLOW+"\nY-Input: "+RESET);
             int col2 = scanner.nextInt();
 
-            if (isValidMove(row1, col1, row2, col2) == true) {
+            if (checkSecondInput(row2, col2) == true) {
                 makeMove(row1, col1, row2, col2);
                 isRedTurn = false;
             } 
             else {
-                System.out.println(" ");
+                System.out.println("Invalid Input");
             }
         }
 
         while (isRedTurn = false) {
 
-             printBoard();
+            printBoard();
 
             if (isRedTurn) {
                 println("\nRed's turn");
@@ -167,13 +178,15 @@ public class Checkers_Javanators {
             print(YELLOW+"\nY-Input: "+RESET);
             int col2 = scanner.nextInt();
 
-            if (isValidMove(row1, col1, row2, col2) == true) {
+            if (checkFirstInput(row1, col1) == true) {
+                //highlight the piece
+            }
+            if (checkSecondInput(row2, col2) == true) {
                 makeMove(row1, col1, row2, col2);
                 isRedTurn = true;
-                break;
             } 
             else {
-                System.out.println(" ");
+                System.out.println("Invalid Input");
             }
         }
     }
