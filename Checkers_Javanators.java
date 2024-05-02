@@ -11,187 +11,7 @@ import java.util.Random;
 
 
 public class Checkers_Javanators {
-
-    static final char EMPTY = '-';
-    static final char cRED = 'R';
-    static final char cBLACK = 'B';
-    static char[][] board = new char[8][8];
-    static boolean isRedTurn = true; // Red goes first
-
-    public static void initializeBoard() {
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if ((i + j) % 2 != 0) {
-                    if (i < 3) {
-                        board[i][j] = cRED;
-                    } else if (i > 4) {
-                        board[i][j] = cBLACK;
-                    } else {
-                        board[i][j] = EMPTY;
-                    }
-                } else {
-                    board[i][j] = EMPTY;
-                }
-            }
-        }
-    }
-
-    public static void printBoard() {
-        //TODO: YOUR CODE HERE
-
-        System.out.println("\n");
-
-        System.out.println("----- YOUR BOARD HERE-----");
-
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                System.out.print(board[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-    public static boolean checkFirstInput(int row1, int col1) {
-        //return false if the numbers entered are invalid
-        if ((row1 < 0) || (row1 > 7) || (col1 < 0)) {
-            println(RED+"Number is not a space on the board, please try again"+RESET);
-            return false;
-        }
-
-        //Make sure there is a piece in the space the user wants to move 
-        if (board[row1][col1] == EMPTY ) {
-            println(RED+"Space is empty, please try again"+RESET);
-            return false;
-        }
-        if ((isRedTurn) == true && board[row1][col1] == cBLACK) {
-            println(RED+"Space is taken by opposite player's piece, please try again"+RESET);
-            return false;
-        }
-
-        if ((isRedTurn) == false && board[row1][col1] == cRED) {
-            println(RED+"Space is taken by opposite player's piece, please try again"+RESET);
-            return false;
-        }
-
-        //If it's red's turn and the piece to be moved is red, accept the move
-        if ((isRedTurn) == true && board[row1][col1] == cRED) {
-            return true;
-        }
-
-        if ((isRedTurn) == false && board[row1][col1] == cBLACK) {
-            return true;
-        }
-    
-        return true;
-        }   
-
-    public static boolean checkSecondInput(int row2, int col2) {
-        //return false if the numbers entered are invalid
-        if ((row2 < 0) || (col2 < 0) || (row2 > 7) || (col2 > 7)) {
-            println(RED+"Number is not a space on the board, please try again"+RESET);
-            return false;
-        }
-
-        return true;
-        }   
-
-    public static boolean isValidMove(int row1, int col1, int row2, int col2) {
-        if (checkFirstInput(row1, col1) && checkSecondInput(row2, col2)) {
-            return true;
-        }
-        return false;
-    }
-
-    public static void makeMove(int row1, int col1, int row2, int col2) {
-        //Find the piece the user entered
-    }
-
-    public static void playGame(){
-        Scanner scanner = new Scanner(System.in);
-
-        while (isRedTurn = true) {
-
-            printBoard();
-
-            if (isRedTurn) {
-                println("\nRed's turn");
-            } else {
-                println("Black's turn");
-            }
-
-            //Ask for user input
-            print("\nEnter move: \n");
-
-            println(YELLOW+"\nWhich piece do you want to move?"+RESET);
-            print(YELLOW+"X-Input: "+RESET);
-            int row1 = scanner.nextInt();
-            print(YELLOW+"\nY-Input: "+RESET);
-            int col1 = scanner.nextInt();
-
-            if (checkFirstInput(row1, col1) == false) {
-                //highlight the piece
-                while (checkFirstInput(row1, col1) == false) {
-                    println(YELLOW+"\nWhich piece do you want to move?"+RESET);
-                    print(YELLOW+"X-Input: "+RESET);
-                    row1 = scanner.nextInt();
-                    print(YELLOW+"\nY-Input: "+RESET);
-                    col1 = scanner.nextInt();
-                }
-            }
         
-            println(YELLOW+"\nTo where?"+RESET);
-            print(YELLOW+"X-Input: "+RESET);
-            int row2 = scanner.nextInt();
-            print(YELLOW+"\nY-Input: "+RESET);
-            int col2 = scanner.nextInt();
-
-            if (checkSecondInput(row2, col2) == true) {
-                makeMove(row1, col1, row2, col2);
-                isRedTurn = false;
-            } 
-            else {
-                System.out.println("Invalid Input");
-            }
-        }
-
-        while (isRedTurn = false) {
-
-            printBoard();
-
-            if (isRedTurn) {
-                println("\nRed's turn");
-            } else {
-                println("Black's turn");
-            }
-
-            //Ask for user input
-            print("\nEnter move: \n");
-
-            println(YELLOW+"\nWhich piece do you want to move?"+RESET);
-            print(YELLOW+"X-Input: "+RESET);
-            int row1 = scanner.nextInt();
-            print(YELLOW+"\nY-Input: "+RESET);
-            int col1 = scanner.nextInt();
-
-            println(YELLOW+"\nTo where?"+RESET);
-            print(YELLOW+"X-Input: "+RESET);
-            int row2 = scanner.nextInt();
-            print(YELLOW+"\nY-Input: "+RESET);
-            int col2 = scanner.nextInt();
-
-            if (checkFirstInput(row1, col1) == true) {
-                //highlight the piece
-            }
-            if (checkSecondInput(row2, col2) == true) {
-                makeMove(row1, col1, row2, col2);
-                isRedTurn = true;
-            } 
-            else {
-                System.out.println("Invalid Input");
-            }
-        }
-    }
-
-    
     public static void main(String[] args) {
         //Initial set up
 
@@ -398,7 +218,7 @@ public class Checkers_Javanators {
         initializeBoard();
 
         //Start the game
-        playGame();
+        playGame(p1, p2);
 }
 while (userMode == 2) {
     println("");
@@ -559,38 +379,278 @@ while (userMode == 2) {
     } 
     } while (userMode != 0);
     }
-     
 
-    //Start the game with the animation
+    static final String EMPTY = "-";
+    static String cRED = "p1";
+    static String cBLACK = "p2";
+    static String[][] board = new String[8][8];
+    static boolean gameEnded = false;
+    static boolean isRedTurn = true; // Red goes first
+
+    public static void initializeBoard() {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if ((i + j) % 2 != 0) {
+                    if (i < 3) {
+                        board[i][j] = cRED;
+                    } else if (i > 4) {
+                        board[i][j] = cBLACK;
+                    } else {
+                        board[i][j] = EMPTY;
+                    }
+                } else {
+                    board[i][j] = EMPTY;
+                }
+            }
+        }
+    }
+
+    public static void printBoard() {
+        //TODO: YOUR CODE HERE
+
+        System.out.println("\n");
+
+        System.out.println("----- YOUR BOARD HERE-----");
+
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+    public static int checkFirstInput(int row1, int col1) {
+        //return false if the numbers entered are invalid
+        if ((row1 < 0) || (row1 > 7) || (col1 < 0)) {
+            return 1;
+        }
+
+        //Make sure there is a piece in the space the user wants to move 
+        if (board[row1][col1] == EMPTY ) {
+            return 2;
+        }
+        if ((isRedTurn) == true && board[row1][col1] == cBLACK) {
+            return 3;
+        }
+
+        if ((isRedTurn) == false && board[row1][col1] == cRED) {
+            return 4;
+        }
+
+        //If it's red's turn and the piece to be moved is red, accept the move
+        if ((isRedTurn) == true && board[row1][col1] == cRED) {
+            return 0;
+        }
+
+        if ((isRedTurn) == false && board[row1][col1] == cBLACK) {
+            return 0;
+        }
+        return 0;
+        }    
+
+    public static int checkSecondInput(int row1, int col1, int row2, int col2) {
+        //Invalid inputs
+        if ((row2 < 0) || (col2 < 0) || (row2 > 7) || (col2 > 7)) {
+            return 1;
+        }    
+        
+        //Make sure that the move is diagonal
+        if (Math.abs(row1-row2) != 1 || Math.abs(col1-col2) != 1) {
+
+            return 2;
+        }
+        //Check if the space is empty
+        if (board[row2][col2] != EMPTY) {
+            return 3;
+        }
+
+        else 
+        return 0;
+    }
+
+    public static void makeMove(int row1, int col1, int row2, int col2, String piece) {
+        //Find the piece the user entered
+        piece = board[row1][col1];
+        board[row1][col1] = EMPTY;
+        board[row2][col2] = piece;
+    }
+
+    public static void playGame(String p1, String p2){
+        cRED = p1;
+        cBLACK = p2;
+        Scanner scanner = new Scanner(System.in);
+        initializeBoard();
+
+            while (gameEnded != true) {
+                printBoard();
+
+                if (isRedTurn) {
+                    println("\nPlayer 1's turn");
+                } else {
+                    println("\nPlayer 2's turn");
+                }
+                //Ask for user input
+                print("\nEnter move: \n");
+
+                println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                print(YELLOW+"X-Input: "+RESET);
+                int row1 = scanner.nextInt();
+                print(YELLOW+"\nY-Input: "+RESET);
+                int col1 = scanner.nextInt();
+
+                if (checkFirstInput(row1, col1) != 0) {
+                    while (checkFirstInput(row1, col1) == 1) {
+                        println(RED+"Number is not a space on the board, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        row1 = scanner.nextInt();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        col1 = scanner.nextInt();
+                    }
+                    while (checkFirstInput(row1, col1) == 2) {
+                        println(RED+"Space is empty, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        row1 = scanner.nextInt();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        col1 = scanner.nextInt();
+                    }
+                    while (checkFirstInput(row1, col1) == 3) {
+                        println(RED+"Space is taken by opposite player's piece, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        row1 = scanner.nextInt();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        col1 = scanner.nextInt();
+                    }
+                    while (checkFirstInput(row1, col1) == 4) {
+                        println(RED+"Space is taken by opposite player's piece, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        row1 = scanner.nextInt();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        col1 = scanner.nextInt();
+                    }
+                }
+                board[row1][col1] = CYAN_BG+" "+RESET;
+
+                printBoard();
+            
+                println(YELLOW+"\nTo where?"+RESET);
+                print(YELLOW+"X-Input: "+RESET);
+                int row2 = scanner.nextInt();
+                print(YELLOW+"\nY-Input: "+RESET);
+                int col2 = scanner.nextInt();
+
+                if (checkSecondInput(row1, col1, row2, col2) != 0) {
+                    while (checkSecondInput(row1, col1, row2, col2) == 1) {
+                        println(RED+"Number is not a space on the board, please try again"+RESET);
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        row2 = scanner.nextInt();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        col2 = scanner.nextInt();
+                        if (row2 == 9 || col2 == 9) {
+                            if (isRedTurn = true) {
+                                board[row1][col1] = p1;
+                            }
+                            else 
+                            board[row1][col1] = p2;
+                            break;
+                        }
+                    }
+                    while (checkSecondInput(row1, col1, row2, col2) == 2) {
+                        println(RED+"Invalid Input"+RESET);
+                        println("Remember, thou can only move diagonally or jump over another piece");
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        row2 = scanner.nextInt();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        col2 = scanner.nextInt();
+                        if (row2 == 9 || col2 == 9) {
+                            if (isRedTurn = true) {
+                                board[row1][col1] = p1;
+                            }
+                            else 
+                            board[row1][col1] = p2;
+                            break;
+                        }
+                    }
+                    while (checkSecondInput(row1, col1, row2, col2) == 3) {
+                        println(RED+"Invalid Input"+RESET);
+                        println("There is already a piece here");
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        row2 = scanner.nextInt();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        col2 = scanner.nextInt();
+                        if (row2 == 9 || col2 == 9) {
+                            if (isRedTurn = true) {
+                                board[row1][col1] = p1;
+                            }
+                            else 
+                            board[row1][col1] = p2;
+                            break;
+                        }
+                    }
+                    
+                }
+
+                if (checkSecondInput(row1, col1, row2, col2) == 0) {
+                    makeMove(row1, col1, row2, col2, p1);
+                    if (isRedTurn = true) {
+                        board[row1][col1] = p1;
+                    }
+                    else 
+                    board[row1][col1] = p2;
+
+                    isRedTurn = !isRedTurn;
+                } 
+
+            }
+    }
 
     //Miscellaneous Methods
     //ANSI Escape Codes
-        //https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println 
-        public static final String RESET = "\u001B[0m";
-        public static final String BLACK = "\u001B[30m";
-        public static final String RED = "\u001B[31m";
-        public static final String GREEN = "\u001B[32m";
-        public static final String YELLOW = "\u001B[33m";
-        public static final String BLUE = "\u001B[34m";
-        public static final String PURPLE = "\u001B[35m";
-        public static final String CYAN = "\u001B[36m";
-        public static final String WHITE = "\u001B[37m";
-        public static final String BLACK_BG = "\u001B[40m";
-        public static final String RED_BG = "\u001B[41m";
-        public static final String GREEN_BG = "\u001B[42m";
-        public static final String YELLOW_BG = "\u001B[43m";
-        public static final String BLUE_BG = "\u001B[44m";
-        public static final String PURPLE_BG = "\u001B[45m";
-        public static final String CYAN_BG = "\u001B[46m";
-        public static final String WHITE_BG = "\u001B[47m";
+    //https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println 
+    public static final String RESET = "\u001B[0m";
+    public static final String BLACK = "\u001B[30m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String WHITE = "\u001B[37m";
+    public static final String BLACK_BG = "\u001B[40m";
+    public static final String RED_BG = "\u001B[41m";
+    public static final String GREEN_BG = "\u001B[42m";
+    public static final String YELLOW_BG = "\u001B[43m";
+    public static final String BLUE_BG = "\u001B[44m";
+    public static final String PURPLE_BG = "\u001B[45m";
+    public static final String CYAN_BG = "\u001B[46m";
+    public static final String WHITE_BG = "\u001B[47m";
 
-        public static void print(String msg){
-            System.out.print(msg);
-        }
-    
-        public static void println(String msg){
-            System.out.println(msg);
-        }
+    public static void print(String msg){
+        System.out.print(msg);
+    }
+
+    public static void println(String msg){
+        System.out.println(msg);
+    }
+
+
 
     //clear screen
     public static void clearScreen() {
