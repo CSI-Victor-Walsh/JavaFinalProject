@@ -475,6 +475,38 @@ while (userMode == 2) {
         board[row2][col2] = piece;
     }
 
+
+    public static void selectPiece (int row, int col) {
+         //<<Select user's piece (by highlighting it)>>
+
+        //1 Store the current board piece in a separate var
+        tempPieceStorage = "";
+                
+        //2 Replace board value on user's selected coordinate with a CYAN BCKRD
+        board[row][col] = CYAN_BG+" "+RESET;
+
+        //3 Re-print board
+        printBoard();
+    }
+
+    public static void deselectPiece (int row, int col) {
+        //Deselect piece by reverting the the string from the tempPieceStorage variable
+
+        //1. store the temp value back to the coordinate on the board
+        board[row][col] = tempPieceStorage;
+
+        //2. re-print board
+        printBoard();
+
+        //3. clear tempPieceSto
+
+    
+    }
+
+
+
+
+
     public static void playGame(String p1, String p2){
         cRED = p1;
         cBLACK = p2;
@@ -489,7 +521,7 @@ while (userMode == 2) {
                 } else {
                     println("\nPlayer 2's turn");
                 }
-                //Ask for user input
+                //Ask for FIRST user input
                 print("\nEnter move: \n");
 
                 println(YELLOW+"\nWhich piece do you want to move?"+RESET);
@@ -540,9 +572,9 @@ while (userMode == 2) {
                         col1 = scanner.nextInt();
                     }
                 }
-                board[row1][col1] = CYAN_BG+" "+RESET;
 
-                printBoard();
+
+                selectPiece(row1, col1);
             
                 println(YELLOW+"\nTo where?"+RESET);
                 print(YELLOW+"X-Input: "+RESET);
@@ -550,7 +582,7 @@ while (userMode == 2) {
                 print(YELLOW+"\nY-Input: "+RESET);
                 int col2 = scanner.nextInt();
 
-                if (checkSecondInput(row1, col1, row2, col2) != 0) {
+                if (checkSecondInput(row1, col1, row2, col2) > 0) { //IF THERE IS AN ERROR IN INPUT
                     while (checkSecondInput(row1, col1, row2, col2) == 1) {
                         println(RED+"Number is not a space on the board, please try again"+RESET);
                         printBoard();
@@ -607,7 +639,11 @@ while (userMode == 2) {
                     
                 }
 
-                if (checkSecondInput(row1, col1, row2, col2) == 0) {
+                else { //No errors. Keep going
+
+                    //Deselect piece
+                    deselectPiece(row1, col1);
+
                     makeMove(row1, col1, row2, col2, p1);
                     if (isRedTurn = true) {
                         board[row1][col1] = p1;
@@ -617,6 +653,8 @@ while (userMode == 2) {
 
                     isRedTurn = !isRedTurn;
                 } 
+
+
 
             }
     }
