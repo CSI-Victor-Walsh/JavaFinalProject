@@ -7,6 +7,8 @@
 
 
 import java.util.Scanner;
+
+
 import java.util.Random;
 
 
@@ -379,6 +381,25 @@ while (userMode == 2) {
     } while (userMode != 0);
     }
 
+    //ANSI Escape Codes
+    //https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println 
+    public static final String RESET = "\u001B[0m";
+    public static final String BLACK = "\u001B[30m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String WHITE = "\u001B[37m";
+    public static final String BLACK_BG = "\u001B[40m";
+    public static final String RED_BG = "\u001B[41m";
+    public static final String GREEN_BG = "\u001B[42m";
+    public static final String YELLOW_BG = "\u001B[43m";
+    public static final String BLUE_BG = "\u001B[44m";
+    public static final String PURPLE_BG = "\u001B[45m";
+    public static final String CYAN_BG = "\u001B[46m";
+    public static final String WHITE_BG = "\u001B[47m";
     //variables
     //empty
     static final String EMPTY = "-";
@@ -387,11 +408,11 @@ while (userMode == 2) {
     //player 1
     static String cRED = "p1";
     //player 1 king
-    static String cREDKING = " ";
+    static String cREDKING = GREEN+" "+RESET;
     //player 2
     static String cBLACK = "p2";
     //player 2 king
-    static String cBLACKKING = " ";
+    static String cBLACKKING = PURPLE+" "+RESET;
     //string game board
     static String[][] board = new String[8][8];
     //game ended
@@ -422,11 +443,7 @@ while (userMode == 2) {
     }
 
     public static void printBoard() {
-        //TODO: YOUR CODE HERE
-
         System.out.println("\n");
-
-        System.out.println("----- YOUR BOARD HERE-----");
 
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -463,7 +480,7 @@ while (userMode == 2) {
             return 0;
         }
         
-        //If it's blakc's turn and the piece to be moved is black, accept the move
+        //If it's black's turn and the piece to be moved is black, accept the move
         if ((isRedTurn) == false && board[row1][col1] == cBLACK) {
             return 0;
         }
@@ -493,13 +510,12 @@ while (userMode == 2) {
             //return 0 if the move is jumping over an opponent's piece
             return 0;
         }
+
         //return 5 if moving backwards
-        if (board[row1][row2] == cRED && col2 <= row1) {
+        if (board[row1][col1] != cREDKING && board[row1][col1] != cBLACKKING && board[row1][col1] == cRED && row2 <= row1 || board[row1][col1] == cBLACK && row2 >= row1) {
             return 5;
         }
-        if (board[row1][row2] == cBLACK && col2 >= row1) {
-            return 5;
-        }
+        
         //return 2 if the move isnt diagonal or its out of rage
         if (Math.abs(row1-row2) != 1 || Math.abs(col1-col2) != 1) {
             return 2;
@@ -585,6 +601,40 @@ while (userMode == 2) {
         //game still continues
         else 
             return 3;
+    } 
+
+    //make sure moves are complately validated
+    public static boolean checkValidInput (int row1,int col1,int row2,int col2) {
+        if (checkFirstInput(row1, col1) == 0 && checkSecondInput(row1, col1, row2, col2) == 0){
+            return true;
+        }
+        return false;        
+    }
+
+    //check for king pieces
+    public static boolean checkKingPiece (int row1, int col1) {
+        //for player 1
+        if (board[row1][col1] == cRED && row1 == 8-1) {
+            return true;
+        }
+        //player 2
+        else if (board[row1][col1] == cBLACK && row1 == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    //make king pieces
+    public static void makeKing (int row1, int col1) {
+        //make a player 1 piece king
+        if (board[row1][col1] == cRED && checkKingPiece(row1, col1) == true) {
+            board[row1][col1] = cREDKING;
+        }
+        //make a player 2 piece king
+        if (board[row1][col1] == cBLACK && checkKingPiece(row1, col1) == true) {
+            board[row1][col1] = cBLACKKING;
+        }
+
     }
 
     public static void playGame(String p1, String p2){
@@ -680,6 +730,7 @@ while (userMode == 2) {
                 //Select the piece 
                 selectPiece(row1, col1);
                 printBoard();
+
                 //ask where the user wants to move            
                 println(YELLOW+"\nTo where?"+RESET);
                 print(YELLOW+"X-Input: "+RESET);
@@ -692,11 +743,9 @@ while (userMode == 2) {
                 int col2 = inCol2-1;
                 
                 //if there is an error with the input
-                if (checkSecondInput(row1, col1, row2, col2) > 0) {
+                if (!checkValidInput(row1, col1, row2, col2)) {
                     //Invalid number, warn the user
                     while (checkSecondInput(row1, col1, row2, col2) == 1) {
-                        deselectPiece(row1, col1);
-                        selectPiece(row1, col1);
                         println(RED+"\nNumber is not a space on the board, please try again"+RESET);
                         printBoard();
                         println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
@@ -708,19 +757,38 @@ while (userMode == 2) {
                         col2 = scanner.nextInt();
                         //subtract the inputs by one
                         col2 = inCol2-1;
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
 
                         //Deselect piece if user enters 9 
                         if (inRow2 == 9) {
                             deselectPiece(row1, col1);
+                            break;
                         }   
                         if (inCol2 == 9) {
                             deselectPiece(row1, col1);
+                            break;
                         }
                     }
                     //warn the user if they tried to move vertically or horizontally
                     while (checkSecondInput(row1, col1, row2, col2) == 2) {
-                        deselectPiece(row1, col1);
-                        selectPiece(row1, col1);
                         println(RED+"\nInvalid Input"+RESET);
                         println("Remember, thou can only move diagonally or jump over another piece");
                         printBoard();
@@ -733,19 +801,38 @@ while (userMode == 2) {
                         col2 = scanner.nextInt();
                         //subtract the inputs by one
                         col2 = inCol2-1;
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
 
                         //Deselect piece if user enters 9
                         if (inRow2 == 9) {
                             deselectPiece(row1, col1);
+                            break;
                         }   
                         if (inCol2 == 9) {
                             deselectPiece(row1, col1);
+                            break;
                         }                    
                     }
                     //warn the user if there is already a piece in the space they want to move
                     while (checkSecondInput(row1, col1, row2, col2) == 3) {
-                        deselectPiece(row1, col1);
-                        selectPiece(row1, col1);
                         println(RED+"\nInvalid Input"+RESET);
                         println("There is already a piece here");
                         printBoard();
@@ -758,19 +845,38 @@ while (userMode == 2) {
                         col2 = scanner.nextInt();
                         //subtract the inputs by one
                         col2 = inCol2-1;
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
                         
                         //Deselect piece if user enters 9
                         if (inRow2 == 9) {
                             deselectPiece(row1, col1);
+                            break;
                         }   
                         if (inCol2 == 9) {
                             deselectPiece(row1, col1);
+                            break;
                         }                 
                     }
                     //warn the user if they tried to do an illegal jumping move
                     while (checkSecondInput(row1, col1, row2, col2) == 4) {
-                        deselectPiece(row1, col1);
-                        selectPiece(row1, col1);
                         println(RED+"\nInvalid Input"+RESET);
                         println("There is no piece to jump over");
                         printBoard();
@@ -783,19 +889,38 @@ while (userMode == 2) {
                         col2 = scanner.nextInt();
                         //subtract the inputs by one
                         col2 = inCol2-1;
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
                        
                         //Deselect piece if user enters 9
                         if (inRow2 == 9) {
                             deselectPiece(row1, col1);
+                            break;
                         }   
                         if (inCol2 == 9) {
                             deselectPiece(row1, col1);
+                            break;
                         }
                     }
                     //warn the user if they try to move backwards
                     while (checkSecondInput(row1, col1, row2, col2) == 5) {
-                        deselectPiece(row1, col1);
-                        selectPiece(row1, col1);
                         println(RED+"\nInvalid Input"+RESET);
                         println("Thou cannot move backwards");
                         printBoard();
@@ -808,28 +933,53 @@ while (userMode == 2) {
                         col2 = scanner.nextInt();
                         //subtract the inputs by one
                         col2 = inCol2-1;
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
                         
                         //Deselect piece if user enters 9
                         if (inRow2 == 9) {
                             deselectPiece(row1, col1);
+                            break;
                         }   
                         if (inCol2 == 9) {
                             deselectPiece(row1, col1);
+                            break;
                         }
                 }
             }
                 //if there are no errors, continue
-                else { 
                     //Deselect piece 
                     deselectPiece(row1, col1);
                     //check and make a jump move
                     makeJumpMove(row1, col1, row2, col2);
                     //make the move
                     makeMove(row1, col1, row2, col2, p1);
+                    //check for king pieces
+                    checkKingPiece(row1, col1);
+                    //make king pieces
+                    if (checkKingPiece(row1, col1) == true) {
+                        makeKing(row1, col1);
+                    }
                     //let the game know the player's turn has ended and its the next player's turn
                     isRedTurn = !isRedTurn;
-                    printBoard();
-                } 
+                
                 checkWin();
                 if (checkWin() == 0) {
                     println("Tie!");
@@ -852,25 +1002,6 @@ while (userMode == 2) {
     }
 
     //Miscellaneous Methods
-    //ANSI Escape Codes
-    //https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println 
-    public static final String RESET = "\u001B[0m";
-    public static final String BLACK = "\u001B[30m";
-    public static final String RED = "\u001B[31m";
-    public static final String GREEN = "\u001B[32m";
-    public static final String YELLOW = "\u001B[33m";
-    public static final String BLUE = "\u001B[34m";
-    public static final String PURPLE = "\u001B[35m";
-    public static final String CYAN = "\u001B[36m";
-    public static final String WHITE = "\u001B[37m";
-    public static final String BLACK_BG = "\u001B[40m";
-    public static final String RED_BG = "\u001B[41m";
-    public static final String GREEN_BG = "\u001B[42m";
-    public static final String YELLOW_BG = "\u001B[43m";
-    public static final String BLUE_BG = "\u001B[44m";
-    public static final String PURPLE_BG = "\u001B[45m";
-    public static final String CYAN_BG = "\u001B[46m";
-    public static final String WHITE_BG = "\u001B[47m";
 
     public static void print(String msg){
         System.out.print(msg);
