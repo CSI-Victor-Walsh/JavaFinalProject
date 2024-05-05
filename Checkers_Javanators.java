@@ -984,16 +984,73 @@ while (userMode == 2) {
                 if (checkWin() == 0) {
                     println("Tie!");
                     gameEnded = true;
+                    //Display a tied message
+                    try {
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" _____ _      _ ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("|_   _(_)    | |");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  | |  _  ___| |");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  | | | |/ _ \\ |");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  | | | |  __/_|");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  \\_/ |_|\\___(_)");
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
                 if (checkWin() == 1) {
-                    println("Player 1 wins!");
+                    println("\n"+ANSI_GREEN+name+" wins!"+ANSI_RESET);
                     p1Wins++;
                     gameEnded = true;
+                    try {
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("   __ ______ _                         __    _    _ _           _  __   ");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("  / / | ___ \\ |                       /  |  | |  | (_)         | | \\ \\  ");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println(" | |  | |_/ / | __ _ _   _  ___ _ __  `| |  | |  | |_ _ __  ___| |  | | ");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("/ /   |  __/| |/ _` | | | |/ _ \\ '__|  | |  | |/\\| | | '_ \\/ __| |   \\ \\");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("\\ \\   | |   | | (_| | |_| |  __/ |    _| |_ \\  /\\  / | | | \\__ \\_|   / /");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println(" | |  \\_|   |_|\\__,_|\\__, |\\___|_|    \\___/  \\/  \\/|_|_| |_|___(_)  | | ");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("  \\_\\                 __/ |                                        /_/  ");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("                     |___/                                              ");
+                    } catch (InterruptedException e) {
+                            e.printStackTrace();
+                    }
                 }
                 if (checkWin() == 2) {
-                    println("Player 2 wins!");
+                    println("\n"+ANSI_GREEN+name2+" wins!"+ANSI_RESET);
                     p2Wins++;
                     gameEnded = true;
+                    try {
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("   __ ______ _                         _____   _    _ _           _  __   ");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("  / / | ___ \\ |                       / __  \\ | |  | (_)         | | \\ \\  ");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println(" | |  | |_/ / | __ _ _   _  ___ _ __  `' / /' | |  | |_ _ __  ___| |  | | ");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("/ /   |  __/| |/ _` | | | |/ _ \\ '__|   / /   | |/\\| | | '_ \\/ __| |   \\ \\");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("\\ \\   | |   | | (_| | |_| |  __/ |    ./ /___ \\  /\\  / | | | \\__ \\_|   / /");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println(" | |  \\_|   |_|\\__,_|\\__, |\\___|_|    \\_____/  \\/  \\/|_|_| |_|___(_)  | | ");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("  \\_\\                 __/ |                                          /_/  ");
+                    Thread.sleep(300); //pause this Java app for 300ms
+                    println("                     |___/                                                ");
+                    } catch (InterruptedException e) {
+                            e.printStackTrace();
+                    }
                 }
                 else if (checkWin() == 3) {
                     gameEnded = false;
