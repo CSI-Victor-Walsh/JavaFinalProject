@@ -20,8 +20,35 @@ public class Checkers_Javanators {
         //Variables
         //Variable for the user's choice
         int userMode = 0;
-
         //Introduce the game with animations
+         clearScreen();
+         try {
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("\n" +
+                     "  ▄████▄      ▄▄▄           ██████    ▄▄▄█████▓    ██▓       ▓█████         ██████     ██▓   ▓█████      ▄████    ▓█████  \n");
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("▒██▀ ▀█     ▒████▄       ▒██    ▒    ▓  ██▒ ▓▒   ▓██▒       ▓█   ▀       ▒██    ▒    ▓██▒   ▓█   ▀     ██▒ ▀█▒   ▓█   ▀  \n");
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("▒▓█    ▄    ▒██  ▀█▄     ░ ▓██▄      ▒ ▓██░ ▒░   ▒██░       ▒███         ░ ▓██▄      ▒██▒   ▒███      ▒██░▄▄▄░   ▒███      \n");
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("▒▓▓▄ ▄██▒   ░██▄▄▄▄██      ▒   ██▒   ░ ▓██▓ ░    ▒██░       ▒▓█  ▄         ▒   ██▒   ░██░   ▒▓█  ▄    ░▓█  ██▓   ▒▓█  ▄    \n");
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("▒ ▓███▀ ░    ▓█   ▓██▒   ▒██████▒▒     ▒██▒ ░    ░██████▒   ░▒████▒      ▒██████▒▒   ░██░   ░▒████▒   ░▒▓███▀▒   ░▒████▒ \n");
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("░ ░▒ ▒  ░    ▒▒   ▓▒█░   ▒ ▒▓▒ ▒ ░     ▒ ░░      ░ ▒░▓  ░   ░░ ▒░ ░      ▒ ▒▓▒ ▒ ░   ░▓     ░░ ▒░ ░    ░▒   ▒    ░░ ▒░ ░\n");
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("  ░  ▒        ▒   ▒▒ ░   ░ ░▒  ░ ░       ░       ░ ░ ▒  ░    ░ ░  ░      ░ ░▒  ░ ░    ▒ ░    ░ ░  ░     ░   ░     ░ ░  ░\n");
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("░             ░   ▒      ░  ░  ░       ░           ░ ░         ░         ░  ░  ░      ▒ ░      ░      ░ ░   ░       ░   \n");
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("░ ░               ░  ░         ░                     ░  ░      ░  ░            ░      ░        ░  ░         ░       ░  ░\n");
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("░ ░            ░  ░      ░               ░  ░   ░  ░         ░   ░     ░  ░      ░    ░  ░\n");
+             Thread.sleep(300); //pause this Java app for 300ms
+             print("░                                                                                         \n");
+         } catch (InterruptedException e) {
+             e.printStackTrace();
+         }
         do {
             //Allow the user to choose to play against a human or against an "AI"
             println("Select a game mode");
@@ -210,12 +237,64 @@ public class Checkers_Javanators {
                     e.printStackTrace();
                 }
                 clearScreen();
+                 //Start the game with the animation
+            try {
+                Thread.sleep(300);
+                    println("                        ██████     ██▓   ▓█████      ▄████    ▓█████ ");
+                    Thread.sleep(300);
+                    println("                      ▒██    ▒    ▓██▒   ▓█   ▀     ██▒ ▀█▒   ▓█   ▀ ");
+                    Thread.sleep(300);
+                    println("                      ░ ▓██▄      ▒██▒   ▒███      ▒██░▄▄▄░   ▒███   ");
+                    Thread.sleep(300);
+                    println("                        ▒   ██▒   ░██░   ▒▓█  ▄    ░▓█  ██▓   ▒▓█  ▄ ");
+                    Thread.sleep(300);
+                    println("                      ▒██████▒▒   ░██░   ░▒████▒   ░▒▓███▀▒   ░▒████▒");
+                    Thread.sleep(300);
+                    println("                      ▒ ▒▓▒ ▒ ░   ░▓     ░░ ▒░ ░    ░▒   ▒    ░░ ▒░ ░");
+                    Thread.sleep(300);
+                    println("                      ░ ░▒  ░ ░    ▒ ░    ░ ░  ░     ░   ░     ░ ░  ░");
+                    Thread.sleep(300);
+                    println("                      ░  ░  ░      ▒ ░      ░      ░ ░   ░       ░   ");
+                    Thread.sleep(300);
+                    println("                            ░      ░        ░  ░         ░       ░  ░");
+                    Thread.sleep(100);
+                
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            clearScreen();
 
-
-        System.out.println("------------CHECKERS----------");
+           
+            try {
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                      ▄▄▄▄      ▓█████      ▄████     ██▓    ███▄    █  ▐██▌                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ▓█████▄    ▓█   ▀     ██▒ ▀█▒   ▓██▒    ██ ▀█   █  ▐██▌                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ▒██▒ ▄██   ▒███      ▒██░▄▄▄░   ▒██▒   ▓██  ▀█ ██▒ ▐██▌                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ▒██░█▀     ▒▓█  ▄    ░▓█  ██▓   ░██░   ▓██▒  ▐▌██▒ ▓██▒                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ░▓█  ▀█▓   ░▒████▒   ░▒▓███▀▒   ░██░   ▒██░   ▓██░ ▒▄▄                          ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ░▒▓███▀▒   ░░ ▒░ ░    ░▒   ▒    ░▓     ░ ▒░   ▒ ▒  ░▀▀▒                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                     ▒░▒   ░     ░ ░  ░     ░   ░     ▒ ░   ░ ░░   ░ ▒░ ░  ░                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                      ░    ░       ░      ░ ░   ░     ▒ ░      ░   ░ ░     ░                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                      ░            ░  ░         ░     ░              ░  ░                            ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                print("                           ░                                                                         ");
+                Thread.sleep(100); //pause this Java app for 300ms
+                
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                clearScreen();
 
         //Initial set up
-
         initializeBoard();
 
         //Start the game
@@ -360,6 +439,7 @@ while (userMode == 2) {
             println("Your opponent is: "+aiName);
             break;
         }
+    }
         
     println("Your opponent is: "+aiName);
     try {
@@ -369,6 +449,66 @@ while (userMode == 2) {
         e.printStackTrace();
     }
     clearScreen();
+     //Start the game with the animation
+     try {
+        Thread.sleep(300);
+            println("                        ██████     ██▓   ▓█████      ▄████    ▓█████ ");
+            Thread.sleep(300);
+            println("                      ▒██    ▒    ▓██▒   ▓█   ▀     ██▒ ▀█▒   ▓█   ▀ ");
+            Thread.sleep(300);
+            println("                      ░ ▓██▄      ▒██▒   ▒███      ▒██░▄▄▄░   ▒███   ");
+            Thread.sleep(300);
+            println("                        ▒   ██▒   ░██░   ▒▓█  ▄    ░▓█  ██▓   ▒▓█  ▄ ");
+            Thread.sleep(300);
+            println("                      ▒██████▒▒   ░██░   ░▒████▒   ░▒▓███▀▒   ░▒████▒");
+            Thread.sleep(300);
+            println("                      ▒ ▒▓▒ ▒ ░   ░▓     ░░ ▒░ ░    ░▒   ▒    ░░ ▒░ ░");
+            Thread.sleep(300);
+            println("                      ░ ░▒  ░ ░    ▒ ░    ░ ░  ░     ░   ░     ░ ░  ░");
+            Thread.sleep(300);
+            println("                      ░  ░  ░      ▒ ░      ░      ░ ░   ░       ░   ");
+            Thread.sleep(300);
+            println("                            ░      ░        ░  ░         ░       ░  ░");
+            Thread.sleep(100);
+        
+    }
+    catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+    clearScreen();
+
+   
+    try {
+        Thread.sleep(100); //pause this Java app for 300ms
+        print("                      ▄▄▄▄      ▓█████      ▄████     ██▓    ███▄    █  ▐██▌                         ");
+        Thread.sleep(100); //pause this Java app for 300ms
+        print("                     ▓█████▄    ▓█   ▀     ██▒ ▀█▒   ▓██▒    ██ ▀█   █  ▐██▌                         ");
+        Thread.sleep(100); //pause this Java app for 300ms
+        print("                     ▒██▒ ▄██   ▒███      ▒██░▄▄▄░   ▒██▒   ▓██  ▀█ ██▒ ▐██▌                         ");
+        Thread.sleep(100); //pause this Java app for 300ms
+        print("                     ▒██░█▀     ▒▓█  ▄    ░▓█  ██▓   ░██░   ▓██▒  ▐▌██▒ ▓██▒                         ");
+        Thread.sleep(100); //pause this Java app for 300ms
+        print("                     ░▓█  ▀█▓   ░▒████▒   ░▒▓███▀▒   ░██░   ▒██░   ▓██░ ▒▄▄                          ");
+        Thread.sleep(100); //pause this Java app for 300ms
+        print("                     ░▒▓███▀▒   ░░ ▒░ ░    ░▒   ▒    ░▓     ░ ▒░   ▒ ▒  ░▀▀▒                         ");
+        Thread.sleep(100); //pause this Java app for 300ms
+        print("                     ▒░▒   ░     ░ ░  ░     ░   ░     ▒ ░   ░ ░░   ░ ▒░ ░  ░                         ");
+        Thread.sleep(100); //pause this Java app for 300ms
+        print("                      ░    ░       ░      ░ ░   ░     ▒ ░      ░   ░ ░     ░                         ");
+        Thread.sleep(100); //pause this Java app for 300ms
+        print("                      ░            ░  ░         ░     ░              ░  ░                            ");
+        Thread.sleep(100); //pause this Java app for 300ms
+        print("                           ░                                                                         ");
+        Thread.sleep(100); //pause this Java app for 300ms
+        
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        clearScreen();
+
+    //Start the game
+    aiGame(p1, aiNameLow);
+
 }
     if (userMode > 2) {
         println(RED+"Invalid number, please try again\n"+RESET);
@@ -376,8 +516,7 @@ while (userMode == 2) {
     while (userMode != 0) {
     println("\nGOODBYE!");
     }
- 
-    } 
+    
     } while (userMode != 0);
     }
 
@@ -402,7 +541,7 @@ while (userMode == 2) {
     public static final String WHITE_BG = "\u001B[47m";
     //variables
     //empty
-    static final String EMPTY = "-";
+    static final String EMPTY = " ";
     //temporary piece storage
     static String tempPieceStorage = " ";
     //player 1
@@ -423,6 +562,8 @@ while (userMode == 2) {
     static int p1Wins = 0;
     //player 2 wins
     static int p2Wins = 0;
+    //white spaces
+    static String wEMPTY = WHITE_BG+EMPTY+RESET;
 
     public static void initializeBoard() {
         for (int i = 0; i < 8; i++) {
@@ -436,20 +577,25 @@ while (userMode == 2) {
                         board[i][j] = EMPTY;
                     }
                 } else {
-                    board[i][j] = EMPTY;
+                    board[i][j] = wEMPTY;
                 }
             }
         }
+        
     }
 
     public static void printBoard() {
         System.out.println("\n");
+        //display numbers
+        println("1 2 3 4 5 6 7 8 ");
+        int count = 1;
 
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 System.out.print(board[i][j] + " ");
             }
-            System.out.println();
+            System.out.println(count);
+            count++;
         }
     }
 
@@ -461,7 +607,7 @@ while (userMode == 2) {
         }
 
         //return 2 if there is not a piece where the player wants to move
-        if (board[row1][col1] == EMPTY ) {
+        if (board[row1][col1] == EMPTY ||board[row1][col1] == wEMPTY  ) {
             return 2;
         }
 
@@ -754,7 +900,7 @@ while (userMode == 2) {
                         //subtract the inputs by one
                         row2 = inRow2-1;
                         print(YELLOW+"\nY-Input: "+RESET);
-                        col2 = scanner.nextInt();
+                        inCol2 = scanner.nextInt();
                         //subtract the inputs by one
                         col2 = inCol2-1;
                         //check valid input and stop the loop if it is
@@ -798,7 +944,7 @@ while (userMode == 2) {
                         //subtract the inputs by one
                         row2 = inRow2-1;
                         print(YELLOW+"\nY-Input: "+RESET);
-                        col2 = scanner.nextInt();
+                        inCol2 = scanner.nextInt();
                         //subtract the inputs by one
                         col2 = inCol2-1;
                         //check valid input and stop the loop if it is
@@ -842,7 +988,7 @@ while (userMode == 2) {
                         //subtract the inputs by one
                         row2 = inRow2-1;
                         print(YELLOW+"\nY-Input: "+RESET);
-                        col2 = scanner.nextInt();
+                        inCol2 = scanner.nextInt();
                         //subtract the inputs by one
                         col2 = inCol2-1;
                         //check valid input and stop the loop if it is
@@ -886,7 +1032,7 @@ while (userMode == 2) {
                         //subtract the inputs by one
                         row2 = inRow2-1;
                         print(YELLOW+"\nY-Input: "+RESET);
-                        col2 = scanner.nextInt();
+                        inCol2 = scanner.nextInt();
                         //subtract the inputs by one
                         col2 = inCol2-1;
                         //check valid input and stop the loop if it is
@@ -930,7 +1076,7 @@ while (userMode == 2) {
                         //subtract the inputs by one
                         row2 = inRow2-1;
                         print(YELLOW+"\nY-Input: "+RESET);
-                        col2 = scanner.nextInt();
+                        inCol2 = scanner.nextInt();
                         //subtract the inputs by one
                         col2 = inCol2-1;
                         //check valid input and stop the loop if it is
@@ -983,6 +1129,485 @@ while (userMode == 2) {
                 checkWin();
                 if (checkWin() == 0) {
                     println("Tie!");
+                    //Display a tied message
+                    try {
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" _____ _      _ ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("|_   _(_)    | |");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  | |  _  ___| |");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  | | | |/ _ \\ |");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  | | | |  __/_|");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  \\_/ |_|\\___(_)");
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    gameEnded = true;
+                }
+                if (checkWin() == 1) {
+                    println("Player 1 wins!");
+                    try {
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("   __ ______ _                         __    _    _ _           _  __   ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  / / | ___ \\ |                       /  |  | |  | (_)         | | \\ \\  ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" | |  | |_/ / | __ _ _   _  ___ _ __  `| |  | |  | |_ _ __  ___| |  | | ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("/ /   |  __/| |/ _` | | | |/ _ \\ '__|  | |  | |/\\| | | '_ \\/ __| |   \\ \\");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("\\ \\   | |   | | (_| | |_| |  __/ |    _| |_ \\  /\\  / | | | \\__ \\_|   / /");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" | |  \\_|   |_|\\__,_|\\__, |\\___|_|    \\___/  \\/  \\/|_|_| |_|___(_)  | | ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  \\_\\                 __/ |                                        /_/  ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("                     |___/                                              ");
+                        } catch (InterruptedException e) {
+                                e.printStackTrace();
+                        }
+                    p1Wins++;
+                    gameEnded = true;
+                }
+                if (checkWin() == 2) {
+                    println("Player 2 wins!");
+                    try {
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("   __ ______ _                         _____   _    _ _           _  __   ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  / / | ___ \\ |                       / __  \\ | |  | (_)         | | \\ \\  ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" | |  | |_/ / | __ _ _   _  ___ _ __  `' / /' | |  | |_ _ __  ___| |  | | ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("/ /   |  __/| |/ _` | | | |/ _ \\ '__|   / /   | |/\\| | | '_ \\/ __| |   \\ \\");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("\\ \\   | |   | | (_| | |_| |  __/ |    ./ /___ \\  /\\  / | | | \\__ \\_|   / /");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" | |  \\_|   |_|\\__,_|\\__, |\\___|_|    \\_____/  \\/  \\/|_|_| |_|___(_)  | | ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  \\_\\                 __/ |                                          /_/  ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("                     |___/                                                ");
+                        } catch (InterruptedException e) {
+                                e.printStackTrace();
+                        }
+                    p2Wins++;
+                    gameEnded = true;
+                }
+                else if (checkWin() == 3) {
+                    gameEnded = false;
+                }
+            }
+            //show the scoreboard
+            scoreBoard(p1Wins, p2Wins, p1, p2);
+            //Ask user if they want to play again
+            println("Would you like to play again?");
+            println("1. Yes");
+            println("0. Quit");
+            print("Choose an option: ");
+            scanner = new Scanner(System.in);
+            int userChoice = scanner.nextInt();
+
+            //Reset the game if user choses 1
+            if (userChoice == 1) {
+                clearScreen();
+                gameEnded = false;
+                playGame(p1, p2);
+                }
+
+            if (userChoice == 0) {
+                println("Exiting...\n");
+                clearScreen();
+                System.exit(0);
+                }
+    }
+    //ai turn
+    public static int aiTurn () {
+        Random rand = new Random();
+        int min = 0;
+        int max = 7;
+        return rand.nextInt(max-min)+min;
+    }
+
+    //method for scoreboard
+    public static void scoreBoard (int p1Wins, int p2Wins, String name1, String name2) {
+        //Display the Scoreboard
+        println("\n*************");
+        println("\nPlayer 1- "+name1);
+        println("Wins: "+p1Wins);
+        println("\n*************");
+        println("\nPlayer 2- "+name2);
+        println("Wins: "+p2Wins+"\n");
+    }
+
+    public static void aiGame(String p1, String p2){
+        cRED = p1;
+        cBLACK = p2;
+        Scanner scanner = new Scanner(System.in);
+        initializeBoard();
+        //initialize variables
+        int row1 = 0;
+        int col1 = 0;
+        int inRow1 = 0;
+        int inCol1 = 0;
+        int row2 = 0;
+        int col2 = 0;
+        int inRow2 = 0;
+        int inCol2 = 0;
+
+            while (gameEnded != true) {
+
+                printBoard();                
+                println("\nPlayer 1's turn");
+                //Ask for FIRST user input
+                print("\nEnter move: \n");
+
+                println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                print(YELLOW+"X-Input: "+RESET);
+
+                inRow1 = scanner.nextInt();
+                //subtract 1 to the original inputs
+                row1 = inRow1-1;
+    
+                print(YELLOW+"\nY-Input: "+RESET);
+                //otherwise, ask for user input
+                inCol1 = scanner.nextInt();
+                //subtract 1 to the original inputs
+                col1 = inCol1-1;
+                
+                //If the first input method returns an eror
+                if (checkFirstInput(row1, col1) != 0) {
+                    //invalid number, warn the user
+                    while (checkFirstInput(row1, col1) == 1) {
+                        println(RED+"\nNumber is not a space on the board, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        inRow1 = scanner.nextInt();
+                        //subtract 1 to the original inputs
+                        row1 = inRow1-1;
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        inCol1 = scanner.nextInt();
+                        //subtract 1 to the original inputs
+                        col1 = inCol1-1;
+                    }
+                    //space is empty, warn the user
+                    while (checkFirstInput(row1, col1) == 2) {
+                        println(RED+"\nSpace is empty, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        inRow1 = scanner.nextInt();
+                        //subtract 1 to the original inputs
+                        row1 = inRow1-1;
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        inCol1 = scanner.nextInt();
+                        //subtract 1 to the original inputs
+                        col1 = inCol1-1;
+                    }
+                    //there is an opposite piece in the space, warn the user
+                    while (checkFirstInput(row1, col1) == 3) {
+                        println(RED+"\nSpace is taken by opposite player's piece, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        inRow1 = scanner.nextInt();
+                        //subtract 1 to the original inputs
+                        row1 = inRow1-1;
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        inCol1 = scanner.nextInt();
+                        //subtract 1 to the original inputs
+                        col1 = inCol1-1;
+                    }
+                    //there is an opposite piece in the space, warn the user
+                    while (checkFirstInput(row1, col1) == 4) {
+                        println(RED+"\nSpace is taken by opposite player's piece, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        inRow1 = scanner.nextInt();
+                        //subtract 1 to the original inputs
+                        row1 = inRow1-1;
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        inCol1 = scanner.nextInt();
+                        //subtract 1 to the original inputs
+                        col1 = inCol1-1;
+                    }
+                }
+                
+                //Select the piece 
+                selectPiece(row1, col1);
+                printBoard();
+
+                //ask where the user wants to move            
+                println(YELLOW+"\nTo where?"+RESET);
+                print(YELLOW+"X-Input: "+RESET);
+                inRow2 = scanner.nextInt();
+                //subtract the inputs by one
+                row2 = inRow2-1;
+
+                print(YELLOW+"\nY-Input: "+RESET);
+
+                inCol2 = scanner.nextInt();
+                //subtract the inputs by one
+                col2 = inCol2-1;
+                
+                
+                //if there is an error with the input
+                if (!checkValidInput(row1, col1, row2, col2)) {
+                    //Invalid number, warn the user
+                    while (checkSecondInput(row1, col1, row2, col2) == 1) {
+                        println(RED+"\nNumber is not a space on the board, please try again"+RESET);
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        inRow2 = scanner.nextInt();
+                        //subtract the inputs by one
+                        row2 = inRow2-1;
+
+                        print(YELLOW+"\nY-Input: "+RESET);
+
+                        inCol2 = scanner.nextInt();
+                        //subtract the inputs by one
+                        col2 = inCol2-1;
+
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
+
+                        //Deselect piece if user enters 9 
+                        if (inRow2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }   
+                        if (inCol2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }
+                    }
+                    //warn the user if they tried to move vertically or horizontally
+                    while (checkSecondInput(row1, col1, row2, col2) == 2) {
+                        println(RED+"\nInvalid Input"+RESET);
+                        println("Remember, thou can only move diagonally or jump over another piece");
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+
+                        inRow2 = scanner.nextInt();
+                        //subtract the inputs by one
+                        row2 = inRow2-1;
+                        print(YELLOW+"\nY-Input: "+RESET);
+
+                        inCol2 = scanner.nextInt();
+                        //subtract the inputs by one
+                        col2 = inCol2-1;
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
+
+                        //Deselect piece if user enters 9
+                        if (inRow2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }   
+                        if (inCol2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }                    
+                    }
+                    //warn the user if there is already a piece in the space they want to move
+                    while (checkSecondInput(row1, col1, row2, col2) == 3) {
+                        println(RED+"\nInvalid Input"+RESET);
+                        println("There is already a piece here");
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        inRow2 = scanner.nextInt();
+                        //subtract the inputs by one
+                        row2 = inRow2-1;
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        col2 = scanner.nextInt();
+                        //subtract the inputs by one
+                        inCol2 = inCol2-1;
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
+                        
+                        //Deselect piece if user enters 9
+                        if (inRow2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }   
+                        if (inCol2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }                 
+                    }
+                    //warn the user if they tried to do an illegal jumping move
+                    while (checkSecondInput(row1, col1, row2, col2) == 4) {
+                        println(RED+"\nInvalid Input"+RESET);
+                        println("There is no piece to jump over");
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        inRow2 = scanner.nextInt();
+                        //subtract the inputs by one
+                        row2 = inRow2-1;
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        inCol2 = scanner.nextInt();
+                        //subtract the inputs by one
+                        col2 = inCol2-1;
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
+                       
+                        //Deselect piece if user enters 9
+                        if (inRow2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }   
+                        if (inCol2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }
+                    }
+                    //warn the user if they try to move backwards
+                    while (checkSecondInput(row1, col1, row2, col2) == 5) {
+                        println(RED+"\nInvalid Input"+RESET);
+                        println("Thou cannot move backwards");
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        inRow2 = scanner.nextInt();
+                        //subtract the inputs by one
+                        row2 = inRow2-1;
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        inCol2 = scanner.nextInt();
+                        //subtract the inputs by one
+                        col2 = inCol2-1;
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
+                        
+                        //Deselect piece if user enters 9
+                        if (inRow2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }   
+                        if (inCol2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }
+                    }
+                }
+            
+                //if there are no errors, continue
+                    //Deselect piece 
+                    deselectPiece(row1, col1);
+                    //check and make a jump move
+                    makeJumpMove(row1, col1, row2, col2);
+                    //make the move
+                    makeMove(row1, col1, row2, col2, p1);
+                    //check for king pieces
+                    checkKingPiece(row1, col1);
+                    //make king pieces
+                    if (checkKingPiece(row1, col1) == true) {
+                        makeKing(row1, col1);
+                    }
+                    //let the game know the player's turn has ended and its the next player's turn
+                    isRedTurn = !isRedTurn;
+                
+                checkWin();
+                if (checkWin() == 0) {
+                    println("Tie!");
                     gameEnded = true;
                 }
                 if (checkWin() == 1) {
@@ -998,6 +1623,417 @@ while (userMode == 2) {
                 else if (checkWin() == 3) {
                     gameEnded = false;
                 }
+                //AI's turn
+                printBoard();
+                
+                println("\nPlayer 2's turn");
+                println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                print(YELLOW+"X-Input: "+RESET);
+                //get AI input
+                row1 = aiTurn();
+    
+                print(YELLOW+"\nY-Input: "+RESET);
+                //get AI input
+                col1 = aiTurn();
+                
+                //If the first input method returns an eror
+                if (checkFirstInput(row1, col1) != 0) {
+                    //invalid number, warn the user
+                    while (checkFirstInput(row1, col1) == 1) {
+                        println(RED+"\nNumber is not a space on the board, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        //get AI input
+                        row1 = aiTurn();                    
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        //get AI input
+                        col1 = aiTurn();        
+                    }
+                    //space is empty, warn the user
+                    while (checkFirstInput(row1, col1) == 2) {
+                        println(RED+"\nSpace is empty, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        //get AI input
+                        row1 = aiTurn();                    
+                        //get AI input
+                        col1 = aiTurn();        
+                    }
+                    //there is an opposite piece in the space, warn the user
+                    while (checkFirstInput(row1, col1) == 3) {
+                        println(RED+"\nSpace is taken by opposite player's piece, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        //get AI input
+                        row1 = aiTurn();                    
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        //get AI input
+                        col1 = aiTurn();        
+                    }
+                    //there is an opposite piece in the space, warn the user
+                    while (checkFirstInput(row1, col1) == 4) {
+                        println(RED+"\nSpace is taken by opposite player's piece, please try again"+RESET);
+                        printBoard();
+
+                        println(YELLOW+"\nWhich piece do you want to move?"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        //get AI input
+                        row1 = aiTurn();                    
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        //get AI input
+                        col1 = aiTurn();        
+                    }
+                }
+                
+                //Select the piece 
+                selectPiece(row1, col1);
+                printBoard();
+
+                //ask where the user wants to move            
+                println(YELLOW+"\nTo where?"+RESET);
+                print(YELLOW+"X-Input: "+RESET);
+                //get AI input
+                row2 = aiTurn();      
+
+                print(YELLOW+"\nY-Input: "+RESET);
+                //get AI input
+                col2 = aiTurn();        
+                
+                
+                //if there is an error with the input
+                if (!checkValidInput(row1, col1, row2, col2)) {
+                    //Invalid number, warn the user
+                    while (checkSecondInput(row1, col1, row2, col2) == 1) {
+                        println(RED+"\nNumber is not a space on the board, please try again"+RESET);
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        //get AI input
+                        row2 = aiTurn();
+
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        //get AI input
+                        col2 = aiTurn();
+
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
+
+                        //Deselect piece if user enters 9 
+                        if (inRow2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }   
+                        if (inCol2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }
+                    }
+                    //warn the user if they tried to move vertically or horizontally
+                    while (checkSecondInput(row1, col1, row2, col2) == 2) {
+                        println(RED+"\nInvalid Input"+RESET);
+                        println("Remember, thou can only move diagonally or jump over another piece");
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        //get AI input
+                        row2 = aiTurn();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        //get AI input
+                        col2 = aiTurn();
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
+
+                        //Deselect piece if user enters 9
+                        if (inRow2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }   
+                        if (inCol2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }                    
+                    }
+                    //warn the user if there is already a piece in the space they want to move
+                    while (checkSecondInput(row1, col1, row2, col2) == 3) {
+                        println(RED+"\nInvalid Input"+RESET);
+                        println("There is already a piece here");
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        //get AI input
+                        row2 = aiTurn();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        //get AI input
+                        col2 = aiTurn();
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
+                        
+                        //Deselect piece if user enters 9
+                        if (inRow2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }   
+                        if (inCol2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }                 
+                    }
+                    //warn the user if they tried to do an illegal jumping move
+                    while (checkSecondInput(row1, col1, row2, col2) == 4) {
+                        println(RED+"\nInvalid Input"+RESET);
+                        println("There is no piece to jump over");
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        //get AI input
+                        row2 = aiTurn();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        //get AI input
+                        col2 = aiTurn();    
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
+                       
+                        //Deselect piece if user enters 9
+                        if (inRow2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }   
+                        if (inCol2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }
+                    }
+                    //warn the user if they try to move backwards
+                    while (checkSecondInput(row1, col1, row2, col2) == 5) {
+                        println(RED+"\nInvalid Input"+RESET);
+                        println("Thou cannot move backwards");
+                        printBoard();
+                        println(YELLOW+"\nTo where? (Type 9 to cancel)"+RESET);
+                        print(YELLOW+"X-Input: "+RESET);
+                        //get AI input
+                        row2 = aiTurn();
+                        print(YELLOW+"\nY-Input: "+RESET);
+                        //get AI input
+                        col2 = aiTurn();
+                        //check valid input and stop the loop if it is
+                        checkValidInput(row1, col1, row2, col2);
+                        if (checkValidInput(row1, col1, row2, col2) == true) {
+                            //Deselect piece 
+                            deselectPiece(row1, col1);
+                            //check and make a jump move
+                            makeJumpMove(row1, col1, row2, col2);
+                            //make the move
+                            makeMove(row1, col1, row2, col2, p1);
+                            //let the game know the player's turn has ended and its the next player's turn
+                            //check for king pieces
+                            checkKingPiece(row1, col1);
+                            //make king pieces
+                            if (checkKingPiece(row1, col1) == true) {
+                                makeKing(row1, col1);
+                            }
+                            isRedTurn = !isRedTurn;
+                            break;
+                        }
+                        
+                        //Deselect piece if user enters 9
+                        if (inRow2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }   
+                        if (inCol2 == 9) {
+                            deselectPiece(row1, col1);
+                            break;
+                        }
+                }
+            }
+            
+                //if there are no errors, continue
+                    //Deselect piece 
+                    deselectPiece(row1, col1);
+                    //check and make a jump move
+                    makeJumpMove(row1, col1, row2, col2);
+                    //make the move
+                    makeMove(row1, col1, row2, col2, p1);
+                    //check for king pieces
+                    checkKingPiece(row1, col1);
+                    //make king pieces
+                    if (checkKingPiece(row1, col1) == true) {
+                        makeKing(row1, col1);
+                    }
+                    //let the game know the player's turn has ended and its the next player's turn
+                    isRedTurn = !isRedTurn;
+                
+                checkWin();
+                if (checkWin() == 0) {
+                    println("Tie!");
+                    //Display a tied message
+                    try {
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" _____ _      _ ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("|_   _(_)    | |");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  | |  _  ___| |");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  | | | |/ _ \\ |");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  | | | |  __/_|");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  \\_/ |_|\\___(_)");
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    gameEnded = true;
+                }
+                if (checkWin() == 1) {
+                    println("Player 1 wins!");
+                    try {
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("   __ ______ _                         __    _    _ _           _  __   ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  / / | ___ \\ |                       /  |  | |  | (_)         | | \\ \\  ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" | |  | |_/ / | __ _ _   _  ___ _ __  `| |  | |  | |_ _ __  ___| |  | | ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("/ /   |  __/| |/ _` | | | |/ _ \\ '__|  | |  | |/\\| | | '_ \\/ __| |   \\ \\");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("\\ \\   | |   | | (_| | |_| |  __/ |    _| |_ \\  /\\  / | | | \\__ \\_|   / /");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" | |  \\_|   |_|\\__,_|\\__, |\\___|_|    \\___/  \\/  \\/|_|_| |_|___(_)  | | ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  \\_\\                 __/ |                                        /_/  ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("                     |___/                                              ");
+                        } catch (InterruptedException e) {
+                                e.printStackTrace();
+                        }
+                    p1Wins++;
+                    gameEnded = true;
+                }
+                if (checkWin() == 2) {
+                    println("Player 2 wins!");
+                    try {
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("   __ ______ _                         _____   _    _ _           _  __   ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  / / | ___ \\ |                       / __  \\ | |  | (_)         | | \\ \\  ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" | |  | |_/ / | __ _ _   _  ___ _ __  `' / /' | |  | |_ _ __  ___| |  | | ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("/ /   |  __/| |/ _` | | | |/ _ \\ '__|   / /   | |/\\| | | '_ \\/ __| |   \\ \\");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("\\ \\   | |   | | (_| | |_| |  __/ |    ./ /___ \\  /\\  / | | | \\__ \\_|   / /");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println(" | |  \\_|   |_|\\__,_|\\__, |\\___|_|    \\_____/  \\/  \\/|_|_| |_|___(_)  | | ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("  \\_\\                 __/ |                                          /_/  ");
+                        Thread.sleep(300); //pause this Java app for 300ms
+                        println("                     |___/                                                ");
+                        } catch (InterruptedException e) {
+                                e.printStackTrace();
+                        }
+                    p2Wins++;
+                    gameEnded = true;
+                }
+                else if (checkWin() == 3) {
+                    gameEnded = false;
+                }
+        }
+        //show the scoreboard
+        scoreBoard(p1Wins, p2Wins, p1, p2);
+        //Ask user if they want to play again
+        println("Would you like to play again?");
+        println("1. Yes");
+        println("0. Quit");
+        print("Choose an option: ");
+        scanner = new Scanner(System.in);
+        int userChoice = scanner.nextInt();
+
+        //Reset the game if user choses 1
+        if (userChoice == 1) {
+            clearScreen();
+            gameEnded = false;
+            playGame(p1, p2);
+            }
+
+        if (userChoice == 0) {
+            println("Exiting...\n");
+            clearScreen();
+            System.exit(0);
             }
     }
 
